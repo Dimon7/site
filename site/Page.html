@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/app.js"></script>
+<style>
+  
+    .row-test{
+      margin-bottom: 5px;
+    }
+    
+
+    .glyphicon{
+      color: green;
+    }
+
+</style>
 <title>Bootstrap - Prebuilt Layout</title>
 
 <!-- Bootstrap -->
@@ -16,7 +30,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="deApp">
+
 <nav class="navbar navbar-default">
   <div class="container-fluid"> 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,27 +82,27 @@
    </div>
   
 <hr>
-  <div class="row"> 
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
+  <div class="row" ng-controller="exerciseController"> 
    
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
-   <div> <input/> <span> <button type="button" class="btn btn-primary">Слушать</button></span> <span> <button type="button" class="btn btn-primary">Проверить</button></span></div><br>
+   <div ng-repeat="test in tests track by $index" class="row-test">
+    
+     <span><button type="button" class="btn btn-primary glyphicon glyphicon-play"></button>&nbsp;&nbsp;</span>
+     <input ng-model="word"/>&nbsp;&nbsp;
+     <span ng-if="word==test.answer" class="glyphicon glyphicon-ok"></span>
+     
+
+    
+  </div>
+
+   
+
   
   </div>
 <hr>
   <div class="row">
     <div class="text-center col-md-6 col-md-offset-3">
       <h4>Курс немецкого языка </h4>
-      <p>Copyright &copy; 2016 &middot; Все права защищены &middot; <a href="http://www.lingvalab.com/" >www.lingvalab.com</a></p>
+      <p>Copyright &copy; 2016 &middot; <a href="http://www.lingvalab.com/" >www.lingvalab.com</a> &middot; Все права защищены &middot; </p>
     </div>
   </div>
   <hr>
@@ -96,6 +111,13 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
